@@ -42,13 +42,13 @@ configuration: ## Section
     ## This is specific to your operating system.
     ## Examples (uncomment the relevant one or add your own):
     ## For Debian, Ubuntu, Archlinux, Gentoo (package ca-certificates):
-    #certificate_authorities: '/etc/ssl/certs/ca-certificates.crt'
+    certificate_authorities: '/etc/ssl/certs/ca-certificates.crt'
     ## For CentOS, Fedora:
     #certificate_authorities: '/etc/pki/tls/certs/ca-bundle.crt'
     
     ## URL for a remote Redis (default=localhost)
     ## Don't forget to restrict IP access if you uncomment these!
-    #redis: 'redis://example_host'
+    redis:ENV['REDIS_URL']
     #redis: 'redis://username:password@host:6379/0'
     #redis: 'unix:///tmp/redis.sock'
     
@@ -139,12 +139,12 @@ configuration: ## Section
   server: ## Section
 
     ## The port on which the appserver should listen (default=3000):
-    #port: 3000
+    port: 3000
 
     ## Rails environment (default='development')
     ## The environment in which the server should be started by default.
     ## Change this if you wish to run a production environment.
-    #rails_environment: 'development'
+    rails_environment: 'production'
    
     ## Write unicorn stderr and stdout log
     #stderr_log: '/usr/local/app/diaspora/log/unicorn-stderr.log'
@@ -215,13 +215,13 @@ configuration: ## Section
   
     ## Pod name (default="diaspora*")
     ## The pod name displayed in various locations, including the header.
-    #pod_name: "diaspora*"
+    pod_name: "Catholic ID"
 
     ## Allow registrations (default=true)
     ## Set this to false to prevent people from signing up for your pod
     ## without an invitation. Note that this needs to be set to true
     ## (or commented out) to enable the first registration (you).
-    #enable_registrations: true
+    enable_registrations: true
     
     ## Auto-follow on sign-up (default=true)
     ## Users will automatically follow a specified account on creation.
